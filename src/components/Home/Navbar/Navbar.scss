@@ -1,0 +1,22 @@
+.navbar-container {
+    .navbar-main {
+        .navbar-child {
+            display: flex;
+            font-size: 14px;
+            line-height: 26px;
+            gap: 20px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 4px;
+
+            &:hover {
+                background-color: #e9eef6;
+                cursor: pointer;
+            }
+
+            &.navbar-child-active {
+                background-color: #c2e7ff;
+            }
+        }
+    }
+}
