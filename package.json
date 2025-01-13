@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.1",
@@ -15,6 +16,7 @@
     "antd": "^5.22.5",
     "axios": "^1.7.9",
     "file-saver": "^2.0.5",
+    "husky": "^9.1.7",
     "js-file-download": "^0.4.12",
     "lodash": "^4.17.21",
     "react": "^18.3.1",
@@ -24,6 +26,8 @@
     "sass": "^1.82.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.15.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
