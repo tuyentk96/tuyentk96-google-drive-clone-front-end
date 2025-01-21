@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import './Header.scss'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../../redux/auth/authSlice'
+import imageUser from '../../../assets/image/user-image.png'
 
 const Header = () => {
     const dispatch = useDispatch()
     const [onModalUserSetting, setOnModalUserSetting] = useState(false)
+    const username = useSelector(state => state.auth.username)
 
     const handleOnClickUserAvatar = () => {
         setOnModalUserSetting(!onModalUserSetting)
@@ -58,26 +60,24 @@ const Header = () => {
                             <svg focusable="false" width="24" height="24" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path><image src="https://ssl.gstatic.com/gb/images/bar/al-icon.png" alt="" height="24" width="24"></image></svg>
                         </div>
                         <div className='header-setting-child relative'>
-                            <img onClick={handleOnClickUserAvatar} className='w-8 h-8 rounded-full' src="https://lh3.googleusercontent.com/ogw/AF2bZyg4uhd7vO7YO17CJw6z98M2zVOsN5nBGKPliDunxNo6lDU=s32-c-mo" alt="" />
+                            <img onClick={handleOnClickUserAvatar} className='w-8 h-8 rounded-full' src={imageUser} alt="" />
                             {onModalUserSetting && <div className={'user-setting mt-[57px] mr-1 absolute top-0 right-0 bg-[#e9eef6] rounded-xl shadow-black'}>
                                 <div className='text-[#1F1F1F] relative text-center text-[14px] font-semibold'>
                                     <div>
-                                        tuyentk96ch@gmail.com
+                                        {username}@gmail.com
                                     </div>
                                     <div className='absolute top-0 right-0' onClick={handleHideUserAvatar}>
                                         <svg width="22" height="22" viewBox="1 1 22 22"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                                     </div>
                                 </div>
                                 <div className='mt-5 flex justify-center relative'>
-                                    <img className='w-20 h-20 rounded-full' src="https://lh3.googleusercontent.com/ogw/AF2bZyg4uhd7vO7YO17CJw6z98M2zVOsN5nBGKPliDunxNo6lDU=s32-c-mo" alt="" />
+                                    <img className='w-20 h-20 rounded-full' src={imageUser} alt="" />
                                     <div className="bg-white rounded-full h-6 w-6 flex justify-center items-center absolute bottom-0 right-[40%]">
                                         <svg width="18" height="18" viewBox="0 0 24 24"><path d="m20.41 4.94-1.35-1.35c-.78-.78-2.05-.78-2.83 0L3 16.82V21h4.18L20.41 7.77c.79-.78.79-2.05 0-2.83zm-14 14.12L5 19v-1.36l9.82-9.82 1.41 1.41-9.82 9.83z" /></svg>
                                     </div>
                                 </div>
-                                <div className='my-2 text-[22px] text-center'>
-                                    Hi, Đỗ!
-                                </div>
-                                <div className='mt-[2px] mb-4 manage-your-google-account'>
+
+                                <div className='mt-[10px] mb-4 manage-your-google-account'>
                                     <div className='py-[9px] px-[23px] text-[#2962ff] '>
                                         Manage your Google Account
                                     </div>

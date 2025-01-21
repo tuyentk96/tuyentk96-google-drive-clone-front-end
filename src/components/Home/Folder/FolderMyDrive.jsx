@@ -346,7 +346,7 @@ const FolderMyDrive = () => {
                                             <div>
                                                 <div className="flex items-center text-[16px] gap-4 mt-3">
                                                     <label className="checkbox style-custom">
-                                                        <input type="checkbox" checked={folderShare.public ? 'checked' : ''} onChange={() => handleOnChangePublic(folderShare)} />
+                                                        <input type="checkbox" checked={folderShare.public ? 'checked' : ''} onChange={() => handleOnChangePublic(folderShare._id)} />
                                                         <div className="checkbox__checkmark"></div>
                                                         <div className="checkbox__body">Pubic</div>
                                                     </label>
